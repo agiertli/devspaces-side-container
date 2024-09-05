@@ -1,0 +1,19 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: eu
+  labels:
+    app: eu
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/agiertli/devspaces-side-container
+      ref: main
+  strategy:
+    dockerStrategy: 
+      dockerFilePath: Dockerfile
+  output:
+    to:
+      kind: ImageStreamTag
+      name: eu:latest
