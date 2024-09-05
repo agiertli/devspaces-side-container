@@ -6,4 +6,4 @@ RUN mvn -f /usr/src/app/pom.xml clean package
 FROM registry.access.redhat.com/ubi8/openjdk-11:latest
 COPY --from=build /usr/src/app/target/eu.jar /usr/app/eu.jar
 EXPOSE 8080  
-ENTRYPOINT ["java","-jar -Dspring.profiles.active=h2","/usr/app/eu.jar"]
+ENTRYPOINT ["java","-jar","-Dspring.profiles.active=h2","/usr/app/eu.jar"]
