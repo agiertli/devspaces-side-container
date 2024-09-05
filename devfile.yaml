@@ -12,7 +12,7 @@ components:
       endpoints:
         - exposure: public
           name: archetype
-          protocol: http
+          protocol: https
           targetPort: 8080
       volumeMounts:
         - name: m2
