@@ -5,6 +5,10 @@ metadata:
   labels:
     app: eu
 spec:
+  triggers:
+    - type: GitHub
+      github:
+        secret: github-webhook
   source:
     type: Git
     git:
